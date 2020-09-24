@@ -42,6 +42,22 @@
             <xpath expr="//page[@name='accounting']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
+            <field name="category_id" position="after">
+                <field name="employee_id"/>
+            </field>
+            <xpath expr="//notebook" position="inside">
+                <page string="Clinic history">
+                    <group>
+                        <field name="clinic_history_ids" nolabel="1" context="{'default_employee_id': employee_id}">
+                            <tree editable="top">
+                                <field name="date"/>
+                                <field name="employee_id"/>
+                                <field name="description"/>
+                            </tree>
+                        </field>
+                    </group>
+                </page>
+            </xpath>
         </field>
     </record>
 

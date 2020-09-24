@@ -1,3 +1,4 @@
 # -*- encoding: utf-8 -*-
 
-# from . import res_partner
+from . import partner
+from . import clinic_history
