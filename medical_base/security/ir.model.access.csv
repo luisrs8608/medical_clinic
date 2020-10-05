@@ -1,2 +1,3 @@
 id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
-clinic_history_group_medical_manager,clinic_history_group_medical_manager,model_clinic_history,group_medical_manager,1,1,1,1
+clinic_history_group_medical_manager,clinic_history_group_medical_manager,model_clinic_history,medical_base.group_medical_manager,1,1,1,1
+appointment_group_medical_manager,appointment_group_medical_manager,model_appointment,medical_base.group_medical_manager,1,1,1,1

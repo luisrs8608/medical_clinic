@@ -6,6 +6,11 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
+            <xpath expr="//form/sheet" position='before'>
+                <header>
+                    <button string="New treatment" name="new_treatment" type="object" class="oe_highlight" groups="medical_base.group_medical_manager"/>
+                </header>
+            </xpath>
             <field name="name" position="attributes">
                 <attribute name="required">1</attribute>
             </field>

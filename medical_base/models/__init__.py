@@ -2,3 +2,5 @@
 
 from . import partner
 from . import clinic_history
+from . import sale_order
+from . import appointment

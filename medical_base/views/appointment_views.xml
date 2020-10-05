@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="appointment_view_tree" model="ir.ui.view">
+            <field name="name">appointment.view.tree</field>
+            <field name="model">appointment</field>
+            <field name="arch" type="xml">
+                <tree string="Appointment">
+                    <field name="date"/>
+                    <field name="date_stop"/>
+                    <field name="patient_id"/>
+                    <field name="employee_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="appointment_view_form" model="ir.ui.view">
+            <field name="name">appointment.view.form</field>
+            <field name="model">appointment</field>
+            <field name="arch" type="xml">
+                <form string="Appointment">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="date"/>
+                                <field name="date_stop"/>
+                                <field name="patient_id"/>
+                                <field name="employee_id"/>
+                            </group>
+                            <group></group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="appointment_view_calendar" model="ir.ui.view">
+            <field name="name">appointment.view.calendar</field>
+            <field name="model">appointment</field>
+            <field name="arch" type="xml">
+                <calendar string="Appointment" date_start="date">
+                    <field name="date"/>
+                    <field name="date_stop"/>
+                    <field name="patient_id"/>
+                    <field name="employee_id"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record id="appointment_action_form" model="ir.actions.act_window">
+            <field name="name">Appointments</field>
+            <field name="res_model">appointment</field>
+            <field name="view_mode">calendar,form,tree</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                Add new appointment
+                </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="appointment_action_form_menu"
+            name="appointment_action_form_menu"
+            action="appointment_action_form"
+            groups="group_medical_manager"
+            parent="contacts.menu_contacts"
+            sequence="10"/>
+    </data>
+</odoo>
