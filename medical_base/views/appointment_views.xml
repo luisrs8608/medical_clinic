@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record id="appointment_view_tree" model="ir.ui.view">
-            <field name="name">appointment.view.tree</field>
-            <field name="model">appointment</field>
+        <record id="calendar_event_view_tree" model="ir.ui.view">
+            <field name="name">calendar.event.view.tree</field>
+            <field name="model">calendar.event</field>
             <field name="arch" type="xml">
                 <tree string="Appointment">
                     <field name="start"/>
@@ -15,14 +15,15 @@
             </field>
         </record>
 
-        <record id="appointment_view_form" model="ir.ui.view">
-            <field name="name">appointment.view.form</field>
-            <field name="model">appointment</field>
+        <record id="calendar_event_view_form" model="ir.ui.view">
+            <field name="name">calendar.event.view.form</field>
+            <field name="model">calendar.event</field>
             <field name="arch" type="xml">
                 <form string="Appointment">
                     <sheet>
                         <group>
                             <group>
+                                <field name="name" invisible="1"/>
                                 <field name="start"/>
                                 <field name="stop"/>
                                 <field name="patient_id"/>
@@ -36,15 +37,15 @@
             </field>
         </record>
 
-        <record id="appointment_view_calendar" model="ir.ui.view">
-            <field name="name">appointment.view.calendar</field>
-            <field name="model">appointment</field>
+        <record id="calendar_event_view_calendar" model="ir.ui.view">
+            <field name="name">calendar.event.view.calendar</field>
+            <field name="model">calendar.event</field>
             <field name="arch" type="xml">
                 <calendar string="Appointment"
                     date_start="start"
                     date_stop="stop"
                     event_open_popup="true"
-                    mode="month"
+                    mode="day"
                     color="employee_id"
                     quick_add="True"
                     date_delay="duration"
@@ -58,10 +59,14 @@
             </field>
         </record>
 
-        <record id="appointment_action_form" model="ir.actions.act_window">
+        <record id="calendar_event_action_form" model="ir.actions.act_window">
             <field name="name">Appointments</field>
-            <field name="res_model">appointment</field>
+            <field name="res_model">calendar.event</field>
             <field name="view_mode">calendar,form,tree</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'calendar', 'view_id': ref('calendar_event_view_calendar')}),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('calendar_event_view_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('calendar_event_view_form')})]"/>
             <field name="help" type="html">
                 <p class="o_view_nocontent_smiling_face">
                 Add new appointment
@@ -70,11 +75,11 @@
         </record>
 
         <menuitem
-            id="appointment_action_form_menu"
+            id="calendar_event_action_form_menu"
             name="Appointment"
-            action="appointment_action_form"
-            groups="group_medical_manager"
-            parent="contacts.menu_contacts"
-            sequence="10"/>
+            action="calendar_event_action_form"
+            groups="medical_base.group_medical_manager"
+            parent="medical_base.medical_base_menu_root"
+            sequence="2"/>
     </data>
 </odoo>

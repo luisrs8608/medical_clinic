@@ -26,7 +26,7 @@ msgid "Add new appointment"
 msgstr "Agregar nueva consulta"
 
 #. module: medical_base
-#: model:ir.model,name:medical_base.model_appointment
+#: model:ir.model,name:medical_base.model_calendar_event
 #: model:ir.ui.menu,name:medical_base.appointment_action_form_menu
 #: model_terms:ir.ui.view,arch_db:medical_base.appointment_view_calendar
 #: model_terms:ir.ui.view,arch_db:medical_base.appointment_view_form

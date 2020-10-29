@@ -62,6 +62,18 @@
                         </field>
                     </group>
                 </page>
+                <page string="Medical appointments">
+                    <group>
+                        <field name="calendar_event_ids" nolabel="1" context="{'default_employee_id': employee_id, 'default_patient_id': active_id}">
+                            <tree>
+                                <field name="start"/>
+                                <field name="stop"/>
+                                <field name="employee_id"/>
+                                <field name="state"/>
+                            </tree>
+                        </field>
+                    </group>
+                </page>
             </xpath>
         </field>
     </record>
@@ -70,5 +82,17 @@
         <field name="context">{'default_type': 'private'}</field>
     </record>
 
+    <menuitem
+        id="medical_base_menu_root"
+        name="Medical clinic"
+        sequence="10"/>
+
+    <menuitem
+        id="medical_base_menu"
+        name="Patients"
+        action="contacts.action_contacts"
+        groups="medical_base.group_medical_manager"
+        parent="medical_base_menu_root"
+        sequence="1"/>
     </data>
 </odoo>
