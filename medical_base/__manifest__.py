@@ -6,7 +6,7 @@
     'author': "Luis Rodriguez",
     # 'website': 'http://www.cloudlt.com',
     'category': 'Hidden',
-    'depends': ['l10n_latam_base', 'l10n_uy', 'hr', 'sale'],
+    'depends': ['l10n_latam_base', 'l10n_uy', 'hr', 'sale', 'calendar'],
     'description': """
     """,
     'data': [
