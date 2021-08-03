@@ -10,7 +10,6 @@
                     <field name="stop"/>
                     <field name="patient_id"/>
                     <field name="employee_id"/>
-                    <field name="state"/>
                 </tree>
             </field>
         </record>
@@ -28,7 +27,6 @@
                                 <field name="stop"/>
                                 <field name="patient_id"/>
                                 <field name="employee_id"/>
-                                <field name="state"/>
                             </group>
                             <group></group>
                         </group>
@@ -54,7 +52,6 @@
                     <field name="stop"/>
                     <field name="patient_id"/>
                     <field name="employee_id"/>
-                    <field name="state"/>
                 </calendar>
             </field>
         </record>
