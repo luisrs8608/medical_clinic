@@ -51,28 +51,24 @@
                 <field name="employee_id"/>
             </field>
             <xpath expr="//notebook" position="inside">
-                <page string="Clinic history">
-                    <group>
-                        <field name="clinic_history_ids" nolabel="1" context="{'default_employee_id': employee_id}">
-                            <tree editable="top">
-                                <field name="date"/>
-                                <field name="employee_id"/>
-                                <field name="description"/>
-                            </tree>
-                        </field>
-                    </group>
+                <page name="clinic_history" string="Clinic history">
+                    <field name="clinic_history_ids" nolabel="1" context="{'default_employee_id': employee_id}">
+                        <tree editable="top">
+                            <field name="date"/>
+                            <field name="employee_id"/>
+                            <field name="description"/>
+                        </tree>
+                    </field>
                 </page>
-                <page string="Medical appointments">
-                    <group>
-                        <field name="calendar_event_ids" nolabel="1" context="{'default_employee_id': employee_id, 'default_patient_id': active_id}">
-                            <tree>
-                                <field name="start"/>
-                                <field name="stop"/>
-                                <field name="employee_id"/>
-                                <field name="state"/>
-                            </tree>
-                        </field>
-                    </group>
+                <page name="medical_appointments" string="Medical appointments">
+                    <field name="calendar_event_ids" nolabel="1" context="{'default_employee_id': employee_id, 'default_patient_id': active_id}">
+                        <tree>
+                            <field name="start"/>
+                            <field name="stop"/>
+                            <field name="employee_id"/>
+                            <!-- <field name="state"/> -->
+                        </tree>
+                    </field>
                 </page>
             </xpath>
         </field>
