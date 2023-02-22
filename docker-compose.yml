@@ -6,6 +6,8 @@ services:
       - mydb
     ports:
       - "8069:8069"
+    volumes:
+      - ./addons:/mnt/extra-addons
     environment:
       - HOST=mydb
       - USER=odoo
