@@ -6,13 +6,11 @@ services:
       - db
     ports:
       - "8069:8069"
-    volumes:
-      - ./addons:/mnt/extra-addons
   db:
     image: postgres:13
     environment:
       - POSTGRES_DB=postgres
-      - POSTGRES_PASSWORD=myodoo
+      - POSTGRES_PASSWORD=odoo
       - POSTGRES_USER=odoo
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
