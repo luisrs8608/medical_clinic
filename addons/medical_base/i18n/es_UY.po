@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 13.0\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-10 03:35+0000\n"
-"PO-Revision-Date: 2020-10-10 03:35+0000\n"
+"POT-Creation-Date: 2023-02-22 21:02+0000\n"
+"PO-Revision-Date: 2023-02-22 21:02+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,26 +18,30 @@ msgstr ""
 #. module: medical_base
 #: model_terms:ir.ui.view,arch_db:medical_base.view_partner_form_clinic_inherit
 msgid "098 000 000"
-msgstr ""
+msgstr "098 000 000"
 
 #. module: medical_base
-#: model_terms:ir.actions.act_window,help:medical_base.appointment_action_form
+#: model_terms:ir.actions.act_window,help:medical_base.calendar_event_action_form
 msgid "Add new appointment"
-msgstr "Agregar nueva consulta"
+msgstr "Adicionar nueva consulta"
+
+#. module: medical_base
+#: model:ir.ui.menu,name:medical_base.calendar_event_action_form_menu
+#: model_terms:ir.ui.view,arch_db:medical_base.calendar_event_view_calendar
+#: model_terms:ir.ui.view,arch_db:medical_base.calendar_event_view_form
+#: model_terms:ir.ui.view,arch_db:medical_base.calendar_event_view_tree
+msgid "Appointment"
+msgstr "Consultas"
+
+#. module: medical_base
+#: model:ir.actions.act_window,name:medical_base.calendar_event_action_form
+msgid "Appointments"
+msgstr "Consultas"
 
 #. module: medical_base
 #: model:ir.model,name:medical_base.model_calendar_event
-#: model:ir.ui.menu,name:medical_base.appointment_action_form_menu
-#: model_terms:ir.ui.view,arch_db:medical_base.appointment_view_calendar
-#: model_terms:ir.ui.view,arch_db:medical_base.appointment_view_form
-#: model_terms:ir.ui.view,arch_db:medical_base.appointment_view_tree
-msgid "Appointment"
-msgstr "Consulta"
-
-#. module: medical_base
-#: model:ir.actions.act_window,name:medical_base.appointment_action_form
-msgid "Appointments"
-msgstr "Consultas"
+msgid "Calendar Event"
+msgstr "Evento de calendario"
 
 #. module: medical_base
 #: model:ir.model,name:medical_base.model_clinic_history
@@ -48,23 +52,16 @@ msgid "Clinic history"
 msgstr "Historia clínica"
 
 #. module: medical_base
-#: model:ir.model.fields.selection,name:medical_base.selection__appointment__state__open
-msgid "Confirmed"
-msgstr "Confirmado"
-
-#. module: medical_base
 #: model:ir.model,name:medical_base.model_res_partner
 msgid "Contact"
 msgstr "Contacto"
 
 #. module: medical_base
-#: model:ir.model.fields,field_description:medical_base.field_appointment__create_uid
 #: model:ir.model.fields,field_description:medical_base.field_clinic_history__create_uid
 msgid "Created by"
 msgstr "Creado por"
 
 #. module: medical_base
-#: model:ir.model.fields,field_description:medical_base.field_appointment__create_date
 #: model:ir.model.fields,field_description:medical_base.field_clinic_history__create_date
 msgid "Created on"
 msgstr "Creando en"
@@ -80,13 +77,12 @@ msgid "Description"
 msgstr "Descripción"
 
 #. module: medical_base
-#: model:ir.model.fields,field_description:medical_base.field_appointment__display_name
 #: model:ir.model.fields,field_description:medical_base.field_clinic_history__display_name
 msgid "Display Name"
 msgstr "Nombre"
 
 #. module: medical_base
-#: model:ir.model.fields,field_description:medical_base.field_appointment__employee_id
+#: model:ir.model.fields,field_description:medical_base.field_calendar_event__employee_id
 #: model:ir.model.fields,field_description:medical_base.field_clinic_history__employee_id
 #: model:ir.model.fields,field_description:medical_base.field_res_partner__employee_id
 #: model:ir.model.fields,field_description:medical_base.field_sale_order__employee_id
@@ -94,38 +90,41 @@ msgid "Dr.(Dra)"
 msgstr "Dr.(Dra)"
 
 #. module: medical_base
-#: model:ir.model.fields,field_description:medical_base.field_appointment__duration
-msgid "Duration"
-msgstr "Duración"
-
-#. module: medical_base
-#: model:ir.model.fields,field_description:medical_base.field_appointment__id
 #: model:ir.model.fields,field_description:medical_base.field_clinic_history__id
 msgid "ID"
 msgstr "Identificador"
 
 #. module: medical_base
-#: model:ir.model.fields,field_description:medical_base.field_appointment____last_update
 #: model:ir.model.fields,field_description:medical_base.field_clinic_history____last_update
 msgid "Last Modified on"
 msgstr "Última modificación"
 
 #. module: medical_base
-#: model:ir.model.fields,field_description:medical_base.field_appointment__write_uid
 #: model:ir.model.fields,field_description:medical_base.field_clinic_history__write_uid
 msgid "Last Updated by"
 msgstr "Última modificación por"
 
 #. module: medical_base
-#: model:ir.model.fields,field_description:medical_base.field_appointment__write_date
 #: model:ir.model.fields,field_description:medical_base.field_clinic_history__write_date
 msgid "Last Updated on"
 msgstr "Última modificación"
 
 #. module: medical_base
+#: model:ir.model.fields,field_description:medical_base.field_res_partner__calendar_event_ids
+#: model:ir.model.fields,field_description:medical_base.field_res_users__calendar_event_ids
+#: model_terms:ir.ui.view,arch_db:medical_base.view_partner_form_clinic_inherit
+msgid "Medical appointments"
+msgstr "Consultas"
+
+#. module: medical_base
 #: model:ir.module.category,name:medical_base.medical_category
 msgid "Medical category"
 msgstr "Categoría médica"
+
+#. module: medical_base
+#: model:ir.ui.menu,name:medical_base.medical_base_menu_root
+msgid "Medical clinic"
+msgstr "Consultorio"
 
 #. module: medical_base
 #: model:res.groups,name:medical_base.group_medical_manager
@@ -138,32 +137,17 @@ msgid "New treatment"
 msgstr "Nuevo tratamiento"
 
 #. module: medical_base
-#: model:ir.model.fields,field_description:medical_base.field_appointment__patient_id
+#: model:ir.model.fields,field_description:medical_base.field_calendar_event__patient_id
 #: model:ir.model.fields,field_description:medical_base.field_clinic_history__patient_id
 msgid "Patient"
 msgstr "Paciente"
 
 #. module: medical_base
+#: model:ir.ui.menu,name:medical_base.medical_base_menu
+msgid "Patients"
+msgstr "Pacientes"
+
+#. module: medical_base
 #: model:ir.model,name:medical_base.model_sale_order
 msgid "Sales Order"
 msgstr "Pedido de venta"
-
-#. module: medical_base
-#: model:ir.model.fields,field_description:medical_base.field_appointment__start
-msgid "Start"
-msgstr "Inicio"
-
-#. module: medical_base
-#: model:ir.model.fields,field_description:medical_base.field_appointment__state
-msgid "Status"
-msgstr "Estados"
-
-#. module: medical_base
-#: model:ir.model.fields,field_description:medical_base.field_appointment__stop
-msgid "Stop"
-msgstr "Fin"
-
-#. module: medical_base
-#: model:ir.model.fields.selection,name:medical_base.selection__appointment__state__draft
-msgid "Unconfirmed"
-msgstr "No confirmado"

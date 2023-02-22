@@ -13,4 +13,4 @@ class ClinicHistory(models.Model):
     patient_id = fields.Many2one('res.partner', string='Patient', index=True, ondelete='cascade')
     date = fields.Date(string='Date', default=fields.Date.today)
     employee_id = fields.Many2one('hr.employee', string='Dr.(Dra)', index=True, ondelete='cascade')
-    description = fields.Html(string='Description')
+    description = fields.Text(string='Description')
