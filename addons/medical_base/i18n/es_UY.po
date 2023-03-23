@@ -143,7 +143,9 @@ msgid "Patient"
 msgstr "Paciente"
 
 #. module: medical_base
-#: model:ir.ui.menu,name:medical_base.medical_base_menu
+#: model:ir.actions.act_window,name:medical_base.patients_action
+#: model:ir.ui.menu,name:medical_base.patients_action_menu
+#: model_terms:ir.ui.view,arch_db:medical_base.patients_view_tree
 msgid "Patients"
 msgstr "Pacientes"
 

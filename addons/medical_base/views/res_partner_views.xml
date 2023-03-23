@@ -113,16 +113,8 @@
         sequence="10"/>
 
     <menuitem
-        id="medical_base_menu"
-        name="Patients"
-        action="contacts.action_contacts"
-        groups="medical_base.group_medical_manager"
-        parent="medical_base_menu_root"
-        sequence="1"/>
-
-    <menuitem
         id="patients_action_menu"
-        name="Patients2"
+        name="Patients"
         action="patients_action"
         groups="medical_base.group_medical_manager"
         parent="medical_base_menu_root"
