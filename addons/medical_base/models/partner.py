@@ -10,6 +10,7 @@ class Patient(models.Model):
     clinic_history_ids = fields.One2many('clinic.history', 'patient_id', string='Clinic history')
     employee_id = fields.Many2one('hr.employee', string='Dr.(Dra)', index=True, ondelete='cascade')
     calendar_event_ids = fields.One2many('calendar.event', 'patient_id', string='Medical appointments')
+    is_patient = fields.Boolean('Is patient?')
 
     def new_treatment(self):
         values = []

@@ -43,9 +43,9 @@
                     date_start="start"
                     date_stop="stop"
                     event_open_popup="true"
-                    mode="day"
+                    mode="month"
                     color="employee_id"
-                    quick_add="True"
+                    quick_add="False"
                     date_delay="duration"
                     event_limit="30">
                     <field name="start"/>
@@ -64,6 +64,7 @@
                 (0, 0, {'view_mode': 'calendar', 'view_id': ref('calendar_event_view_calendar')}),
                 (0, 0, {'view_mode': 'tree', 'view_id': ref('calendar_event_view_tree')}),
                 (0, 0, {'view_mode': 'form', 'view_id': ref('calendar_event_view_form')})]"/>
+            <field name="context">{'default_allday': 0}</field>
             <field name="help" type="html">
                 <p class="o_view_nocontent_smiling_face">
                 Add new appointment
