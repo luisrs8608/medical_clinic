@@ -32,3 +32,14 @@ class Patient(models.Model):
         action['res_id'] = order_ids.id
 
         return action
+
+    def open_import_pacients(self):
+        return {
+            'name': 'Import pacients data',
+            'view_type': 'form',
+            'view_mode': 'form',
+            'res_model': 'import.pacients.data',
+            'view_id': self.env.ref('medical_base.import_pacients_data_form_view').id,
+            'type': 'ir.actions.act_window',
+            'target': 'new'
+        }

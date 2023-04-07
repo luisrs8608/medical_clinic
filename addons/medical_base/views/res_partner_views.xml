@@ -8,7 +8,11 @@
         <field name="arch" type="xml">
             <xpath expr="//form/sheet" position='before'>
                 <header>
-                    <button string="New treatment" name="new_treatment" type="object" class="oe_highlight" groups="medical_base.group_medical_manager"/>
+                    <button string="New treatment"
+                        name="new_treatment"
+                        type="object"
+                        class="oe_highlight"
+                        groups="medical_base.group_medical_manager"/>
                 </header>
             </xpath>
             <field name="name" position="attributes">
@@ -58,6 +62,9 @@
                             <field name="date"/>
                             <field name="employee_id"/>
                             <field name="description"/>
+                            <field name="order_id"/>
+                            <field name="amount_total" sum="Total To Invoice"/>
+                            <field name="paid" sum="Total Paid"/>
                         </tree>
                     </field>
                 </page>
@@ -72,6 +79,29 @@
                     </field>
                 </page>
             </xpath>
+        </field>
+    </record>
+
+    <record id="view_partner_latam_form_clinic_inherit" model="ir.ui.view">
+        <field name="name">view_partner_latam_form_clinic_inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="l10n_latam_base.view_partner_latam_form"/>
+        <field type="xml" name="arch">
+            <xpath expr="//label[@for='l10n_latam_identification_type_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//div" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//div/field[@name='l10n_latam_identification_type_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//div/field[@name='vat']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <field name="vat" position="attributes">
+                <attribute name="invisible">0</attribute>
+            </field>
         </field>
     </record>
 

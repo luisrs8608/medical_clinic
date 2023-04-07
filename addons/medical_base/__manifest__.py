@@ -15,6 +15,7 @@
         'views/res_partner_views.xml',
         'views/sale_order_views.xml',
         'views/appointment_views.xml',
+        'wizard/import_pacients_data_views.xml',
     ],
     'installable': True,
     'application': True,

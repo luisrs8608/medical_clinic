@@ -17,5 +17,6 @@ class SaleOrder(models.Model):
                     'employee_id': so.employee_id.id,
                     'date': so.date_order,
                     'description': so.note,
+                    'order_id': so.id,
                 })
         return res

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="import_pacients_data_form_view" model="ir.ui.view">
+            <field name="name">import.pacients.data.views.form</field>
+            <field name="model">import.pacients.data</field>
+            <field name="arch" type="xml">
+                <form string="Import pacients data">
+                    <group>
+                        <field name="data_file"/>
+                    </group>
+                    <footer>
+                        <button string="Importar" name="import_pacients" type="object" class="oe_highlight"/>
+                        <button string="Cancelar" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    <record id="import_pacients_data_action" model="ir.actions.act_window">
+        <field name="name">import_pacients_data_action</field>
+        <field name="res_model">import.pacients.data</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="import_pacients_data_form_view"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem
+        id="import_pacients_data_action_menu"
+        name="Importar pacients"
+        action="import_pacients_data_action"
+        groups="medical_base.group_medical_manager"
+        parent="medical_base_menu_root"
+        sequence="3"/>
+    </data>
+</openerp>
