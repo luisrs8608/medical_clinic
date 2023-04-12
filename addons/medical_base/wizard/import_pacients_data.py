@@ -32,7 +32,7 @@ class ImportPacientsData(models.TransientModel):
             _date = fields.Date.today()
 
             for rowx, row in enumerate(map(sheet.row, range(sheet.nrows))):
-                if rowx > 2255 and rowx < 2300:
+                if rowx > 2255:
                     if row[0].ctype is xlrd.XL_CELL_DATE:
                         _date = xlrd.xldate.xldate_as_datetime(row[0].value, book.datemode)
                     name = row[1].value
