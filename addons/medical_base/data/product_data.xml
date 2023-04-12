@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="product_product_general_treatment" model="product.product">
+            <field name="name">General treatment</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">1</field>
+            <field name="list_price">1</field>
+            <field name="detailed_type">service</field>
+            <field name="uom_id" ref="uom.product_uom_hour"/>
+            <field name="uom_po_id" ref="uom.product_uom_hour"/>
+            <field name="taxes_id" eval="False"/>
+            <field name="supplier_taxes_id" eval="False"/>
+            <field name="purchase_ok" eval="False"/>
+        </record>
+
+    </data>
+</odoo>

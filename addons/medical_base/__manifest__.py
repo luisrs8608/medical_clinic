@@ -10,6 +10,7 @@
     'description': """
     """,
     'data': [
+        'data/product_data.xml',
         'security/medical_base_security.xml',
         'security/ir.model.access.csv',
         'views/res_partner_views.xml',
